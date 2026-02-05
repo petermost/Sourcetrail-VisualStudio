@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright 2018 Coati Software KG
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -88,7 +88,7 @@ namespace VCProjectEngineWrapper
 					return rawStandardString.Replace("stdcpp", "c++");
 				}
 			}
-			catch (Exception e)
+			catch (Exception)
 			{
 				Logging.LogInfo("Unable to fetch language standard from project configuration, using default standard instead.");
 			}

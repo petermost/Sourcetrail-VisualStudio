@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright 2018 Coati Software KG
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -25,6 +25,8 @@ namespace CoatiSoftware.SourcetrailExtension.Tests.Helpers
 {
 	public static class TestUtility
 	{
+		private const int S_OK = 0;
+
 		public static void OpenSolution(string solutionFilePath)
 		{
 			IVsSolution solutionService = (IVsSolution)VsIdeTestHostContext.ServiceProvider.GetService(typeof(IVsSolution));
@@ -33,14 +35,14 @@ namespace CoatiSoftware.SourcetrailExtension.Tests.Helpers
 			DTE dte = (DTE)VsIdeTestHostContext.ServiceProvider.GetService(typeof(DTE));
 			Console.WriteLine("opened solution contains " + dte.Solution.Projects.Count.ToString() + " projects");
 
-			Assert.AreEqual(VSConstants.S_OK, ret);
+			Assert.AreEqual(S_OK, ret);
 		}
 
 		public static void CloseCurrentSolution()
 		{
 			IVsSolution solutionService = (IVsSolution)VsIdeTestHostContext.ServiceProvider.GetService(typeof(IVsSolution));
 			int ret = solutionService.CloseSolutionElement((uint)__VSSLNSAVEOPTIONS.SLNSAVEOPT_NoSave, null, 0);
-			Assert.AreEqual(VSConstants.S_OK, ret);
+			Assert.AreEqual(S_OK, ret);
 		}
 	}
 }

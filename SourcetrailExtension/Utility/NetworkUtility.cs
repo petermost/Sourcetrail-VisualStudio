@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright 2018 Coati Software KG
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -77,7 +77,7 @@ namespace CoatiSoftware.SourcetrailExtension.Utility
 					_allDone.WaitOne();
 				}
 			}
-			catch (ThreadAbortException e)
+			catch (ThreadAbortException)
 			{
 				Logging.Logging.LogInfo("Socket listener was stopped for port " + ownPort.ToString() + ".");
 			}

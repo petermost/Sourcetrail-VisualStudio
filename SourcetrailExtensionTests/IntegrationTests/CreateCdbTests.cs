@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright 2018 Coati Software KG
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -236,10 +236,10 @@ namespace CoatiSoftware.SourcetrailExtension.Tests
 			foreach (Project project in dte.Solution.Projects)
 			{
 				List<string> configurationNames = Utility.SolutionUtility.GetConfigurationNames(dte);
-				Assert.IsTrue(configurationNames.Count > 0, "No target configurations found in loaded solution.");
+				Assert.IsNotEmpty(configurationNames, "No target configurations found in loaded solution.");
 
 				List<string> platformNames = Utility.SolutionUtility.GetPlatformNames(dte);
-				Assert.IsTrue(platformNames.Count > 0, "No target platforms found in loaded solution.");
+				Assert.IsNotEmpty(platformNames, "No target platforms found in loaded solution.");
 
 				SolutionParser.SolutionParser solutionParser = new SolutionParser.SolutionParser(new TestPathResolver());
 				solutionParser.CreateCompileCommands(
