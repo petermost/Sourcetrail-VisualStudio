@@ -38,10 +38,18 @@
     <AssemblyOriginatorKeyFile>KeyVs2015.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.VisualStudio.Interop, Version=17.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
-    <Reference Include="Microsoft.VisualStudio.VCProjectEngine, Version=17.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <Reference Include="Microsoft.VisualStudio.Imaging.Interop.14.0.DesignTime, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.VisualStudio.Imaging.Interop.14.0.DesignTime.17.14.40254\lib\net472\Microsoft.VisualStudio.Imaging.Interop.14.0.DesignTime.dll</HintPath>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
+    <Reference Include="Microsoft.VisualStudio.Interop, Version=17.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.VisualStudio.Interop.17.14.40260\lib\net472\Microsoft.VisualStudio.Interop.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.VCProjectEngine, Version=17.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <HintPath>..\packages\Microsoft.VisualStudio.VCProjectEngine.17.14.40264\lib\net472\Microsoft.VisualStudio.VCProjectEngine.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="netstandard" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -66,11 +74,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="KeyVs2015.snk" />
+    <None Include="PackagesVs2015.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SourcetrailExtensionUtility\SourcetrailExtensionUtility.csproj">
       <Project>{604b5751-af34-4ff9-92c3-c85a6bcdf98e}</Project>
-      <Name>SourcetrailPluginUtility</Name>
+      <Name>SourcetrailExtensionUtility</Name>
     </ProjectReference>
     <ProjectReference Include="..\VCProjectEngineWrapperInterfaces\VCProjectEngineWrapperInterfaces.csproj">
       <Project>{F592DB46-0C77-470B-AAF8-80C51F44380E}</Project>
