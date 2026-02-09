@@ -22,16 +22,9 @@ namespace VCProjectEngineWrapper
 	{
 		public static string GetWrappedVersion()
 		{
-			return
-#if (VS2015)
-				"14.0";
-#elif (VS2017)
-				"15.0";
-#elif (VS2019)
-				"16.0";
-#elif (VS2026)
-				"18.0";
-#endif
+			// TODO (New Version): Add correct version number
+
+			return "18.0";
 		}
 	}
 }

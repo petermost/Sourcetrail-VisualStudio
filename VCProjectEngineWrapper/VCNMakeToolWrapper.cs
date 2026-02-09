@@ -19,32 +19,12 @@ using Microsoft.VisualStudio.VCProjectEngine;
 
 namespace VCProjectEngineWrapper
 {
-	public class
-#if (VS2015)
-		VCNMakeToolWrapperVs2015
-#elif (VS2017)
-		VCNMakeToolWrapperVs2017
-#elif (VS2019)
-		VCNMakeToolWrapperVs2019
-#elif (VS2026)
-		VCNMakeToolWrapperVs2026
-#endif
-		: IVCNMakeToolWrapper
+	public class VCNMakeToolWrapperVs2026 : IVCNMakeToolWrapper
 	{
 		private VCNMakeTool _wrapped = null;
 		private IVCRulePropertyStorage _wrappedRules = null;
 
-		public
-#if (VS2015)
-			VCNMakeToolWrapperVs2015
-#elif (VS2017)
-			VCNMakeToolWrapperVs2017
-#elif (VS2019)
-			VCNMakeToolWrapperVs2019
-#elif (VS2026)
-			VCNMakeToolWrapperVs2026
-#endif
-			(object wrapped)
+		public VCNMakeToolWrapperVs2026(object wrapped) // TODO: Use concrete type
 		{
 			_wrapped = wrapped as VCNMakeTool;
 			_wrappedRules = wrapped as IVCRulePropertyStorage;

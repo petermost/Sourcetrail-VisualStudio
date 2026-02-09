@@ -22,31 +22,11 @@ using System.Collections.Generic;
 
 namespace VCProjectEngineWrapper
 {
-	public class
-#if (VS2015)
-		VCProjectWrapperVs2015
-#elif (VS2017)
-		VCProjectWrapperVs2017
-#elif (VS2019)
-		VCProjectWrapperVs2019
-#elif (VS2026)
-		VCProjectWrapperVs2026
-#endif
-		: IVCProjectWrapper
+	public class VCProjectWrapperVs2026 : IVCProjectWrapper
 	{
 		private VCProject _wrapped = null;
 
-		public
-#if (VS2015)
-			VCProjectWrapperVs2015
-#elif (VS2017)
-			VCProjectWrapperVs2017
-#elif (VS2019)
-			VCProjectWrapperVs2019
-#elif (VS2026)
-			VCProjectWrapperVs2026
-#endif
-			(object wrapped)
+		public VCProjectWrapperVs2026(object wrapped) // TODO: Use concrete type
 		{
 			_wrapped = wrapped as VCProject;
 		}
@@ -66,7 +46,7 @@ namespace VCProjectEngineWrapper
 			try
 			{
 				IEnumerable configurations = _wrapped.Configurations as IEnumerable;
-				foreach (Object configuration in configurations)
+				foreach (Object configuration in configurations) // TODO: Use concrete type
 				{
 					VCConfiguration vcProjectConfig = configuration as VCConfiguration;
 
@@ -74,17 +54,7 @@ namespace VCProjectEngineWrapper
 						vcProjectConfig.ConfigurationName == configurationName &&
 						vcProjectConfig.Platform.Name == platformName)
 					{
-						return new
-#if (VS2015)
-						VCConfigurationWrapperVs2015
-#elif (VS2017)
-						VCConfigurationWrapperVs2017
-#elif (VS2019)
-						VCConfigurationWrapperVs2019
-#elif (VS2026)
-						VCConfigurationWrapperVs2026
-#endif
-						(vcProjectConfig);
+						return new VCConfigurationWrapperVs2026(vcProjectConfig);
 					}
 				}
 			}
@@ -94,17 +64,7 @@ namespace VCProjectEngineWrapper
 			}
 			Logging.LogError("Failed to find project config matching with \"" + configurationName + "\"");
 
-			return new
-#if (VS2015)
-			VCConfigurationWrapperVs2015
-#elif (VS2017)
-			VCConfigurationWrapperVs2017
-#elif (VS2019)
-			VCConfigurationWrapperVs2019
-#elif (VS2026)
-			VCConfigurationWrapperVs2026
-#endif
-			(null);
+			return new VCConfigurationWrapperVs2026(null);
 		}
 
 		public string GetProjectDirectory()
@@ -125,7 +85,7 @@ namespace VCProjectEngineWrapper
 		public List<string> GetReferencedProjectNames()
 		{
 			List<string> referencedProjectNames = new List<string>();
-			foreach (Object o in _wrapped.VCReferences)
+			foreach (Object o in _wrapped.VCReferences) // TODO: Use concrete type
 			{
 				VCProjectReference projectReference = o as VCProjectReference;
 				if (projectReference != null)

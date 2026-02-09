@@ -19,31 +19,11 @@ using Microsoft.VisualStudio.VCProjectEngine;
 
 namespace VCProjectEngineWrapper
 {
-	public class
-#if (VS2015)
-		VCPlatformWrapperVs2015
-#elif (VS2017)
-		VCPlatformWrapperVs2017
-#elif (VS2019)
-		VCPlatformWrapperVs2019
-#elif (VS2026)
-		VCPlatformWrapperVs2026
-#endif
-		: IVCPlatformWrapper
+	public class VCPlatformWrapperVs2026 : IVCPlatformWrapper
 	{
 		private VCPlatform _wrapped = null;
 
-		public
-#if (VS2015)
-			VCPlatformWrapperVs2015
-#elif (VS2017)
-			VCPlatformWrapperVs2017
-#elif (VS2019)
-			VCPlatformWrapperVs2019
-#elif (VS2026)
-			VCPlatformWrapperVs2026
-#endif
-			(object wrapped)
+		public VCPlatformWrapperVs2026(object wrapped) // TODO: Use concrete type
 		{
 			_wrapped = wrapped as VCPlatform;
 		}

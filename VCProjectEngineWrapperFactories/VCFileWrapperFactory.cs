@@ -24,44 +24,21 @@ namespace VCProjectEngineWrapper
 	{
 		private interface IFactoryModule
 		{
-			IVCFileWrapper Create(object wrapped);
+			IVCFileWrapper Create(object wrapped); // TODO: Use concrete type
 		}
 
 		private class FactoryModule2026 : IFactoryModule
 		{
-			public IVCFileWrapper Create(object wrapped)
+			public IVCFileWrapper Create(object wrapped) // TODO: Use concrete type
 			{
 				return new VCFileWrapperVs2026(wrapped);
 			}
 
 		}
-		private class FactoryModule2019 : IFactoryModule
-		{
-			public IVCFileWrapper Create(object wrapped)
-			{
-				return new VCFileWrapperVs2019(wrapped);
-			}
-		}
-
-		private class FactoryModule2017 : IFactoryModule
-		{
-			public IVCFileWrapper Create(object wrapped)
-			{
-				return new VCFileWrapperVs2017(wrapped);
-			}
-		}
-
-		private class FactoryModule2015 : IFactoryModule
-		{
-			public IVCFileWrapper Create(object wrapped)
-			{
-				return new VCFileWrapperVs2015(wrapped);
-			}
-		}
 
 		private static Queue<IFactoryModule> modules = null;
 
-		public static IVCFileWrapper create(object wrapped)
+		public static IVCFileWrapper create(object wrapped) // TODO: Use concrete type
 		{
 			if (modules == null)
 			{
@@ -69,9 +46,6 @@ namespace VCProjectEngineWrapper
 
 				// One of these modules will be working for each version of Visual Studio.
 				modules.Enqueue(new FactoryModule2026());
-				modules.Enqueue(new FactoryModule2019());
-				modules.Enqueue(new FactoryModule2017());
-				modules.Enqueue(new FactoryModule2015());
 			}
 
 			IVCFileWrapper wrapper = null;

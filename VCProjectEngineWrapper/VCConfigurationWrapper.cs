@@ -23,31 +23,11 @@ using System.Runtime.Remoting;
 
 namespace VCProjectEngineWrapper
 {
-	public class
-#if (VS2015)
-		VCConfigurationWrapperVs2015
-#elif (VS2017)
-		VCConfigurationWrapperVs2017
-#elif (VS2019)
-		VCConfigurationWrapperVs2019
-#elif (VS2026)
-		VCConfigurationWrapperVs2026
-#endif
-		: IVCConfigurationWrapper
+	public class VCConfigurationWrapperVs2026 : IVCConfigurationWrapper
 	{
 		private VCConfiguration _wrapped = null;
 
-		public
-#if (VS2015)
-			VCConfigurationWrapperVs2015
-#elif (VS2017)
-			VCConfigurationWrapperVs2017
-#elif (VS2019)
-			VCConfigurationWrapperVs2019
-#elif (VS2026)
-			VCConfigurationWrapperVs2026
-#endif
-			(object wrapped)
+		public VCConfigurationWrapperVs2026(object wrapped) // TODO: Use concrete type
 		{
 			_wrapped = wrapped as VCConfiguration;
 		}
@@ -95,22 +75,12 @@ namespace VCProjectEngineWrapper
 			try
 			{
 				IEnumerable tools = _wrapped.Tools as IEnumerable;
-				foreach (Object tool in tools)
+				foreach (Object tool in tools) // TODO: Use concrete type
 				{
 					VCCLCompilerTool compilerTool = tool as VCCLCompilerTool;
 					if (compilerTool != null)
 					{
-						return new
-#if (VS2015)
-							VCCLCompilerToolWrapperVs2015
-#elif (VS2017)
-							VCCLCompilerToolWrapperVs2017
-#elif (VS2019)
-							VCCLCompilerToolWrapperVs2019
-#elif (VS2026)
-							VCCLCompilerToolWrapperVs2026
-#endif
-							(compilerTool);
+						return new VCCLCompilerToolWrapperVs2026(compilerTool);
 					}
 				}
 			}
@@ -118,17 +88,7 @@ namespace VCProjectEngineWrapper
 			{
 				Logging.LogError("Configuration failed to retreive cl compiler tool: " + e.Message);
 			}
-			return new
-#if (VS2015)
-				VCCLCompilerToolWrapperVs2015
-#elif (VS2017)
-				VCCLCompilerToolWrapperVs2017
-#elif (VS2019)
-				VCCLCompilerToolWrapperVs2019
-#elif (VS2026)
-				VCCLCompilerToolWrapperVs2026
-#endif
-				(null);
+			return new VCCLCompilerToolWrapperVs2026(null);
 		}
 
 		public IVCNMakeToolWrapper GetNMakeTool()
@@ -142,17 +102,7 @@ namespace VCProjectEngineWrapper
 					VCNMakeTool compilerTool = tool as VCNMakeTool;
 					if (compilerTool != null)
 					{
-						return new
-#if (VS2015)
-							VCNMakeToolWrapperVs2015
-#elif (VS2017)
-							VCNMakeToolWrapperVs2017
-#elif (VS2019)
-							VCNMakeToolWrapperVs2019
-#elif (VS2026)
-							VCNMakeToolWrapperVs2026
-#endif
-							(compilerTool);
+						return new VCNMakeToolWrapperVs2026(compilerTool);
 					}
 				}
 			}
@@ -160,17 +110,7 @@ namespace VCProjectEngineWrapper
 			{
 				Logging.LogError("Configuration failed to retreive nmake tool: " + e.Message);
 			}
-			return new
-#if (VS2015)
-				VCNMakeToolWrapperVs2015
-#elif (VS2017)
-				VCNMakeToolWrapperVs2017
-#elif (VS2019)
-				VCNMakeToolWrapperVs2019
-#elif (VS2026)
-				VCNMakeToolWrapperVs2026
-#endif
-				(null);
+			return new VCNMakeToolWrapperVs2026(null);
 		}
 
 		public List<IVCPropertySheetWrapper> GetPropertySheets()
@@ -184,17 +124,7 @@ namespace VCProjectEngineWrapper
 					VCPropertySheet vcPropertySheet = wrappedPropertySheet as VCPropertySheet;
 					if (vcPropertySheet != null)
 					{
-						IVCPropertySheetWrapper wrapper = new
-#if (VS2015)
-							VCPropertySheetWrapperVs2015
-#elif (VS2017)
-							VCPropertySheetWrapperVs2017
-#elif (VS2019)
-							VCPropertySheetWrapperVs2019
-#elif (VS2026)
-							VCPropertySheetWrapperVs2026
-#endif
-							(vcPropertySheet);
+						IVCPropertySheetWrapper wrapper = new VCPropertySheetWrapperVs2026(vcPropertySheet);
 
 						if (wrapper != null && wrapper.isValid())
 						{
@@ -213,17 +143,7 @@ namespace VCProjectEngineWrapper
 
 		public IVCPlatformWrapper GetPlatform()
 		{
-			return new
-#if (VS2015)
-				VCPlatformWrapperVs2015
-#elif (VS2017)
-				VCPlatformWrapperVs2017
-#elif (VS2019)
-				VCPlatformWrapperVs2019
-#elif (VS2026)
-				VCPlatformWrapperVs2026
-#endif
-				(_wrapped.Platform);
+			return new VCPlatformWrapperVs2026(_wrapped.Platform);
 		}
 	}
 }

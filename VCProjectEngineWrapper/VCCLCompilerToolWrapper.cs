@@ -21,32 +21,12 @@ using System;
 
 namespace VCProjectEngineWrapper
 {
-	public class
-#if (VS2015)
-		VCCLCompilerToolWrapperVs2015
-#elif (VS2017)
-		VCCLCompilerToolWrapperVs2017
-#elif (VS2019)
-		VCCLCompilerToolWrapperVs2019
-#elif (VS2026)
-		VCCLCompilerToolWrapperVs2026
-#endif
-		: IVCCLCompilerToolWrapper
+	public class VCCLCompilerToolWrapperVs2026 : IVCCLCompilerToolWrapper
 	{
 		private VCCLCompilerTool _wrapped = null;
 		private IVCRulePropertyStorage _wrappedRules = null;
 
-		public
-#if (VS2015)
-			VCCLCompilerToolWrapperVs2015
-#elif (VS2017)
-			VCCLCompilerToolWrapperVs2017
-#elif (VS2019)
-			VCCLCompilerToolWrapperVs2019
-#elif (VS2026)
-			VCCLCompilerToolWrapperVs2026
-#endif
-			(object wrapped)
+		public VCCLCompilerToolWrapperVs2026(object wrapped) // TODO: Use concrete type
 		{
 			_wrapped = wrapped as VCCLCompilerTool;
 			_wrappedRules = wrapped as IVCRulePropertyStorage;

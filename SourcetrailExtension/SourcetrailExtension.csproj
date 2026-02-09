@@ -40,6 +40,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DeployExtension>True</DeployExtension>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -199,18 +200,6 @@
     <ProjectReference Include="..\VCProjectEngineWrapperInterfaces\VCProjectEngineWrapperInterfaces.csproj">
       <Project>{f592db46-0c77-470b-aaf8-80c51f44380e}</Project>
       <Name>VCProjectEngineWrapperInterfaces</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\VCProjectEngineWrapper\VCProjectEngineWrapperVs2015.csproj">
-      <Project>{1c139999-9592-4891-aa62-2c8a16430d0a}</Project>
-      <Name>VCProjectEngineWrapperVs2015</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\VCProjectEngineWrapper\VCProjectEngineWrapperVs2017.csproj">
-      <Project>{b49207f9-89a3-42d8-bc04-8bf77ed2e295}</Project>
-      <Name>VCProjectEngineWrapperVs2017</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\VCProjectEngineWrapper\VCProjectEngineWrapperVs2019.csproj">
-      <Project>{1c982e5a-bf66-49de-a1bc-eea849be58e8}</Project>
-      <Name>VCProjectEngineWrapperVs2019</Name>
     </ProjectReference>
     <ProjectReference Include="..\VCProjectEngineWrapper\VCProjectEngineWrapperVs2026.csproj">
       <Project>{96baedd6-ed22-4eb6-b2ca-b746cd568636}</Project>

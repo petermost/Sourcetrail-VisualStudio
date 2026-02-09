@@ -19,32 +19,12 @@ using Microsoft.VisualStudio.VCProjectEngine;
 
 namespace VCProjectEngineWrapper
 {
-	public class
-#if (VS2015)
-		VCResourceCompilerToolWrapperVs2015
-#elif (VS2017)
-		VCResourceCompilerToolWrapperVs2017
-#elif (VS2019)
-		VCResourceCompilerToolWrapperVs2019
-#elif (VS2026)
-		VCResourceCompilerToolWrapperVs2026
-#endif
-		: IVCResourceCompilerToolWrapper
+	public class VCResourceCompilerToolWrapperVs2026 : IVCResourceCompilerToolWrapper
 	{
 		private VCResourceCompilerTool _wrapped = null;
 		private IVCRulePropertyStorage _wrappedRules = null;
 
-		public
-#if (VS2015)
-			VCResourceCompilerToolWrapperVs2015
-#elif (VS2017)
-			VCResourceCompilerToolWrapperVs2017
-#elif (VS2019)
-			VCResourceCompilerToolWrapperVs2019
-#elif (VS2026)
-			VCResourceCompilerToolWrapperVs2026
-#endif
-			(object wrapped)
+		public VCResourceCompilerToolWrapperVs2026(object wrapped) // TODO: Use concrete type
 		{
 			_wrapped = wrapped as VCResourceCompilerTool;
 			_wrappedRules = wrapped as IVCRulePropertyStorage;

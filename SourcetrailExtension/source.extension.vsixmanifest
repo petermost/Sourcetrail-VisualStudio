@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
 	<Metadata>
-		<Identity Id="acf15780-03b5-440e-a41e-db79b7043fc2" Version="2.2.0" Language="en-US" Publisher="Peter Most" />
+		<Identity Id="acf15780-03b5-440e-a41e-db79b7043fc2" Version="2026.2.9" Language="en-US" Publisher="Peter Most" />
 		<DisplayName>Sourcetrail Extension</DisplayName>
 		<Description xml:space="preserve">This extension allows you to synchronize Visual Studio with Sourcetrail, a Clang based source code exploration tool. Additionally it lets you generate a Clang Compilation Database for any Visual Studio solution, which can also be used to run other Clang based tools.</Description>
 		<MoreInfo>http://www.sourcetrail.de/</MoreInfo>
@@ -11,6 +11,7 @@
 		<Tags>C, C++, Navigation, diagram, graph, visualization, clang, Compilation Database</Tags>
 	</Metadata>
 	<Installation InstalledByMsi="false">
+		<!-- TODO (New Version): Add correct version number -->
 		<InstallationTarget Version="[18.0,19.0)" Id="Microsoft.VisualStudio.Community">
     		<ProductArchitecture>amd64</ProductArchitecture>
   		</InstallationTarget>

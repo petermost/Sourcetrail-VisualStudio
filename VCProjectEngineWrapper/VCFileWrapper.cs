@@ -20,31 +20,11 @@ using System.Collections.Generic;
 
 namespace VCProjectEngineWrapper
 {
-	public class
-#if (VS2015)
-	VCFileWrapperVs2015
-#elif (VS2017)
-	VCFileWrapperVs2017
-#elif (VS2019)
-	VCFileWrapperVs2019
-#elif (VS2026)
-	VCFileWrapperVs2026
-#endif
-		: IVCFileWrapper
+	public class VCFileWrapperVs2026 : IVCFileWrapper
 	{
 		private VCFile _wrapped = null;
 
-		public
-#if (VS2015)
-			VCFileWrapperVs2015
-#elif (VS2017)
-			VCFileWrapperVs2017
-#elif (VS2019)
-			VCFileWrapperVs2019
-#elif (VS2026)
-			VCFileWrapperVs2026
-#endif
-			(object wrapped)
+		public VCFileWrapperVs2026(object wrapped) // TODO: Use concrete type
 		{
 			_wrapped = wrapped as VCFile;
 		}
@@ -66,17 +46,7 @@ namespace VCProjectEngineWrapper
 
 		public IVCProjectWrapper GetProject()
 		{
-			return new
-#if (VS2015)
-			VCProjectWrapperVs2015
-#elif (VS2017)
-			VCProjectWrapperVs2017
-#elif (VS2019)
-			VCProjectWrapperVs2019
-#elif (VS2026)
-			VCProjectWrapperVs2026
-#endif
-			(_wrapped.project);
+			return new VCProjectWrapperVs2026(_wrapped.project);
 		}
 
 		public List<IVCFileConfigurationWrapper> GetFileConfigurations()
@@ -84,17 +54,8 @@ namespace VCProjectEngineWrapper
 			List<IVCFileConfigurationWrapper> fileConfigurations = new List<IVCFileConfigurationWrapper>();
 			foreach (Object configuration in _wrapped.FileConfigurations)
 			{
-				IVCFileConfigurationWrapper vcFileConfig = new
-#if (VS2015)
-					VCFileConfigurationWrapperVs2015
-#elif (VS2017)
-					VCFileConfigurationWrapperVs2017
-#elif (VS2019)
-					VCFileConfigurationWrapperVs2019
-#elif (VS2026)
-					VCFileConfigurationWrapperVs2026
-#endif
-					(configuration);
+				IVCFileConfigurationWrapper vcFileConfig = new VCFileConfigurationWrapperVs2026(configuration);
+
 				if (vcFileConfig.isValid())
 				{
 					fileConfigurations.Add(vcFileConfig);

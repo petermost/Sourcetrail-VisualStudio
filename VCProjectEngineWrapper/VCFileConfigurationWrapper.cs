@@ -19,31 +19,11 @@ using System;
 
 namespace VCProjectEngineWrapper
 {
-	public class
-#if (VS2015)
-		VCFileConfigurationWrapperVs2015
-#elif (VS2017)
-		VCFileConfigurationWrapperVs2017
-#elif (VS2019)
-		VCFileConfigurationWrapperVs2019
-#elif (VS2026)
-		VCFileConfigurationWrapperVs2026
-#endif
-		: IVCFileConfigurationWrapper
+	public class VCFileConfigurationWrapperVs2026 : IVCFileConfigurationWrapper
 	{
 		private VCFileConfiguration _wrapped = null;
 
-		public
-#if (VS2015)
-			VCFileConfigurationWrapperVs2015
-#elif (VS2017)
-			VCFileConfigurationWrapperVs2017
-#elif (VS2019)
-			VCFileConfigurationWrapperVs2019
-#elif (VS2026)
-			VCFileConfigurationWrapperVs2026
-#endif
-			(object wrapped)
+		public VCFileConfigurationWrapperVs2026(object wrapped) // TODO: Use concrete type
 		{
 			_wrapped = wrapped as VCFileConfiguration;
 		}
@@ -75,17 +55,7 @@ namespace VCProjectEngineWrapper
 				tool = null;
 			}
 
-			return new
-#if (VS2015)
-				VCCLCompilerToolWrapperVs2015
-#elif (VS2017)
-				VCCLCompilerToolWrapperVs2017
-#elif (VS2019)
-				VCCLCompilerToolWrapperVs2019
-#elif (VS2026)
-				VCCLCompilerToolWrapperVs2026
-#endif
-				(tool);
+			return new VCCLCompilerToolWrapperVs2026(tool);
 		}
 	}
 }
