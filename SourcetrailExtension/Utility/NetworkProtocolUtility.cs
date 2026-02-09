@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright 2018 Coati Software KG
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -21,17 +21,17 @@ namespace CoatiSoftware.SourcetrailExtension.Utility
 {
 	class NetworkProtocolUtility
 	{
-		private static string s_divider = ">>";
-		private static string s_setActiveTokenPrefix = "setActiveToken";
-		private static string s_moveCursorPrefix = "moveCursor";
-		private static string s_endOfMessageToken = "<EOM>";
+		private static readonly string s_divider = ">>";
+		private static readonly string s_setActiveTokenPrefix = "setActiveToken";
+		private static readonly string s_moveCursorPrefix = "moveCursor";
+		private static readonly string s_endOfMessageToken = "<EOM>";
 
-		private static string s_createCdbProjectPrefix = "createCDBProject";
-		private static string s_ideId = "vs";
+		private static readonly string s_createCdbProjectPrefix = "createCDBProject";
+		private static readonly string s_ideId = "Visual Studio";
 
-		private static string s_createCdbPrefix = "createCDB";
+		private static readonly string s_createCdbPrefix = "createCDB";
 
-		private static string s_pingPrefix = "ping";
+		private static readonly string s_pingPrefix = "ping";
 
 		public enum MESSAGE_TYPE
 		{

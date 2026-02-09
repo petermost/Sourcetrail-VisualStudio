@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright 2018 Coati Software KG
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -26,6 +26,8 @@ namespace VCProjectEngineWrapper
 		VCResourceCompilerToolWrapperVs2017
 #elif (VS2019)
 		VCResourceCompilerToolWrapperVs2019
+#elif (VS2026)
+		VCResourceCompilerToolWrapperVs2026
 #endif
 		: IVCResourceCompilerToolWrapper
 	{
@@ -39,6 +41,8 @@ namespace VCProjectEngineWrapper
 			VCResourceCompilerToolWrapperVs2017
 #elif (VS2019)
 			VCResourceCompilerToolWrapperVs2019
+#elif (VS2026)
+			VCResourceCompilerToolWrapperVs2026
 #endif
 			(object wrapped)
 		{

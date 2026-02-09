@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright 2018 Coati Software KG
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -26,6 +26,8 @@ namespace VCProjectEngineWrapper
 		VCPlatformWrapperVs2017
 #elif (VS2019)
 		VCPlatformWrapperVs2019
+#elif (VS2026)
+		VCPlatformWrapperVs2026
 #endif
 		: IVCPlatformWrapper
 	{
@@ -38,6 +40,8 @@ namespace VCProjectEngineWrapper
 			VCPlatformWrapperVs2017
 #elif (VS2019)
 			VCPlatformWrapperVs2019
+#elif (VS2026)
+			VCPlatformWrapperVs2026
 #endif
 			(object wrapped)
 		{

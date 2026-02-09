@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright 2018 Coati Software KG
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -26,6 +26,8 @@ namespace VCProjectEngineWrapper
 		VCNMakeToolWrapperVs2017
 #elif (VS2019)
 		VCNMakeToolWrapperVs2019
+#elif (VS2026)
+		VCNMakeToolWrapperVs2026
 #endif
 		: IVCNMakeToolWrapper
 	{
@@ -39,6 +41,8 @@ namespace VCProjectEngineWrapper
 			VCNMakeToolWrapperVs2017
 #elif (VS2019)
 			VCNMakeToolWrapperVs2019
+#elif (VS2026)
+			VCNMakeToolWrapperVs2026
 #endif
 			(object wrapped)
 		{

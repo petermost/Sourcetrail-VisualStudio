@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright 2018 Coati Software KG
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -28,6 +28,8 @@ namespace VCProjectEngineWrapper
 		VCPropertySheetWrapperVs2017
 #elif (VS2019)
 		VCPropertySheetWrapperVs2019
+#elif (VS2026)
+		VCPropertySheetWrapperVs2026
 #endif
 		: IVCPropertySheetWrapper
 	{
@@ -40,6 +42,8 @@ namespace VCProjectEngineWrapper
 			VCPropertySheetWrapperVs2017
 #elif (VS2019)
 			VCPropertySheetWrapperVs2019
+#elif (VS2026)
+			VCPropertySheetWrapperVs2026
 #endif
 			(object wrapped)
 		{
@@ -78,6 +82,8 @@ namespace VCProjectEngineWrapper
 							VCCLCompilerToolWrapperVs2017
 #elif (VS2019)
 							VCCLCompilerToolWrapperVs2019
+#elif (VS2026)
+							VCCLCompilerToolWrapperVs2026
 #endif
 							(compilerTool);
 					}
@@ -94,6 +100,8 @@ namespace VCProjectEngineWrapper
 				VCCLCompilerToolWrapperVs2017
 #elif (VS2019)
 				VCCLCompilerToolWrapperVs2019
+#elif (VS2026)
+				VCCLCompilerToolWrapperVs2026
 #endif
 				(null);
 		}
@@ -115,6 +123,8 @@ namespace VCProjectEngineWrapper
 							VCResourceCompilerToolWrapperVs2017
 #elif (VS2019)
 							VCResourceCompilerToolWrapperVs2019
+#elif (VS2026)
+							VCResourceCompilerToolWrapperVs2026
 #endif
 							(compilerTool);
 					}
@@ -131,6 +141,8 @@ namespace VCProjectEngineWrapper
 				VCResourceCompilerToolWrapperVs2017
 #elif (VS2019)
 				VCResourceCompilerToolWrapperVs2019
+#elif (VS2026)
+				VCResourceCompilerToolWrapperVs2026
 #endif
 				(null);
 		}

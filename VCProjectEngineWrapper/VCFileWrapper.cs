@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright 2018 Coati Software KG
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -27,6 +27,8 @@ namespace VCProjectEngineWrapper
 	VCFileWrapperVs2017
 #elif (VS2019)
 	VCFileWrapperVs2019
+#elif (VS2026)
+	VCFileWrapperVs2026
 #endif
 		: IVCFileWrapper
 	{
@@ -39,6 +41,8 @@ namespace VCProjectEngineWrapper
 			VCFileWrapperVs2017
 #elif (VS2019)
 			VCFileWrapperVs2019
+#elif (VS2026)
+			VCFileWrapperVs2026
 #endif
 			(object wrapped)
 		{
@@ -69,6 +73,8 @@ namespace VCProjectEngineWrapper
 			VCProjectWrapperVs2017
 #elif (VS2019)
 			VCProjectWrapperVs2019
+#elif (VS2026)
+			VCProjectWrapperVs2026
 #endif
 			(_wrapped.project);
 		}
@@ -85,6 +91,8 @@ namespace VCProjectEngineWrapper
 					VCFileConfigurationWrapperVs2017
 #elif (VS2019)
 					VCFileConfigurationWrapperVs2019
+#elif (VS2026)
+					VCFileConfigurationWrapperVs2026
 #endif
 					(configuration);
 				if (vcFileConfig.isValid())

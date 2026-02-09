@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright 2018 Coati Software KG
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -29,6 +29,8 @@ namespace VCProjectEngineWrapper
 				"15.0";
 #elif (VS2019)
 				"16.0";
+#elif (VS2026)
+				"18.0";
 #endif
 		}
 	}

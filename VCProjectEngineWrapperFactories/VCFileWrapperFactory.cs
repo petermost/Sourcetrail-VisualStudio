@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright 2018 Coati Software KG
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -27,6 +27,14 @@ namespace VCProjectEngineWrapper
 			IVCFileWrapper Create(object wrapped);
 		}
 
+		private class FactoryModule2026 : IFactoryModule
+		{
+			public IVCFileWrapper Create(object wrapped)
+			{
+				return new VCFileWrapperVs2026(wrapped);
+			}
+
+		}
 		private class FactoryModule2019 : IFactoryModule
 		{
 			public IVCFileWrapper Create(object wrapped)
@@ -60,6 +68,7 @@ namespace VCProjectEngineWrapper
 				modules = new Queue<IFactoryModule>();
 
 				// One of these modules will be working for each version of Visual Studio.
+				modules.Enqueue(new FactoryModule2026());
 				modules.Enqueue(new FactoryModule2019());
 				modules.Enqueue(new FactoryModule2017());
 				modules.Enqueue(new FactoryModule2015());
