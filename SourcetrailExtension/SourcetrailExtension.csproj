@@ -21,7 +21,7 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>CoatiSoftware.SourcetrailExtension</RootNamespace>
-    <AssemblyName>vs-sourcetrail</AssemblyName>
+    <AssemblyName>Sourcetrail-VisualStudio2026Extension</AssemblyName>
     <SignAssembly>True</SignAssembly>
     <AssemblyOriginatorKeyFile>Key.snk</AssemblyOriginatorKeyFile>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
