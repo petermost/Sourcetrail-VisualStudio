@@ -1,5 +1,10 @@
 # Changelog
 
+## 2026.2.9
+* Fixes
+	* Updates for Visual Studio 2026
+* Changes
+	* Remove support for Visual Studio 2015 to 2019
 
 ## 2.1.1
 
